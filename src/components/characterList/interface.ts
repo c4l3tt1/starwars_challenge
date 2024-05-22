@@ -1,6 +1,6 @@
-import { ICharacterBox } from '../characterBox/interface'
+import { ICharacterDetails } from '../characterBox/interface'
 
 export interface ICharacterList {
   className?: string
-  listItems?: ICharacterBox[]
+  listItems?: ICharacterDetails[]
 }
