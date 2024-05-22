@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  .container {
+    @apply w-full max-w-[120rem] m-auto px-[3.125rem];
+  }
+}
