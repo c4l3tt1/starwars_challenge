@@ -1,5 +1,7 @@
 import { listPeopleWithHomeworlds } from '@/api/services/people'
+import { Button } from '@/components/button'
 import { CharactersList } from '@/components/characterList'
+import { Filter } from '@/components/filter'
 import { PageIntroBox } from '@/components/pageIntro'
 
 const HomePage = async () => {
@@ -12,7 +14,11 @@ const HomePage = async () => {
           title="Star Wars Characters"
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         />
-        <CharactersList listItems={dataPeople} />
+      </div>
+      <Filter label="Filter By" />
+      <div className="container md:px-6">
+        <CharactersList listTitle="All Characters" listItems={dataPeople} />
+        <Button text="Load More" />
       </div>
     </main>
   )
