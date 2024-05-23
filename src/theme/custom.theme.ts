@@ -5,6 +5,7 @@ export const screens = {
   sm: { max: 768 },
   xs: { max: 640 },
   xxs: { max: 480 },
+  xxxs: { max: 390 },
 }
 
 export const screensCustom = {
@@ -14,6 +15,7 @@ export const screensCustom = {
   sm: { max: `${screens.sm.max}px` },
   xs: { max: `${screens.xs.max}px` },
   xxs: { max: `${screens.xxs.max}px` },
+  xxxs: { max: `${screens.xxxs.max}px` },
 }
 
 export const fontSizeCustom = {
@@ -37,6 +39,7 @@ export const colorsCustom = {
   blueStarWars: '#002B53',
   grayStarWars: {
     50: '#E6E6E6',
+    80: '#C8C8C8',
     100: '#757575',
     200: '#666666',
     300: '#333333',

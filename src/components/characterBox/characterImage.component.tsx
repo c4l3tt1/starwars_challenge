@@ -4,7 +4,7 @@ import { ICharacterImage } from './interface'
 
 export const CharacterImage = ({ imageUrl, className, ...props }: ICharacterImage) => {
   return (
-    <div className={cn('w-full pb-[56%] max-h-[14.375rem] relative', className)} {...props}>
+    <div className={cn('w-full pb-[53%] max-h-[14.375rem] relative', className)} {...props}>
       <Image
         src={imageUrl}
         width={432}
