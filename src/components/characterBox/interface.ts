@@ -1,5 +1,5 @@
 export type ICharacterName = React.ComponentProps<'h3'>
-export type ICharacterHome = React.ComponentProps<'h4'>
+export type ICharacterHomeWorld = React.ComponentProps<'h4'>
 
 export interface ICharacterDetails {
   name?: string
