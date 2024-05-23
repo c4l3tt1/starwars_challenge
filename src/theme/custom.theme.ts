@@ -17,13 +17,15 @@ export const screensCustom = {
 }
 
 export const fontSizeCustom = {
-  sm: '0.75rem' /* 12px */,
+  xs: '0.75rem' /* 12px */,
+  sm: '0.938rem' /* 15px */,
   base: '0.875rem' /* 14px */,
   lg: '1rem' /* 16px */,
   xl: '1.25rem' /* 20px */,
   '1xl': '1.375rem' /* 22px */,
-  '2xl': '2.125rem' /* 34px */,
-  '3xl': '3.375rem' /* 54px */,
+  '2xl': '2rem' /* 32px */,
+  '3xl': '2.125rem' /* 34px */,
+  '4xl': '3.375rem' /* 54px */,
 }
 
 export const fontWeightCustom = {

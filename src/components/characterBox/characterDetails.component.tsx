@@ -8,7 +8,7 @@ export const CharacterDetails = ({ height, mass, gender, className, ...props }: 
 
   return (
     <>
-      <div className={cn('text-sm text-grayStarWars-100 leading-4 font-regular m-0 uppercase', className)} {...props}>
+      <div className={cn('text-xs text-grayStarWars-100 leading-4 font-regular m-0 uppercase', className)} {...props}>
         {hasHeight && <span className="block">Height • {height}</span>}
         {hasMass && <span className="block">Mass • {mass}</span>}
         {hasGender && <span className="block">Gender • {gender}</span>}
