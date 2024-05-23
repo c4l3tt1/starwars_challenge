@@ -1,4 +1,3 @@
-'use client'
 import { cn } from '@/utils/classes'
 import { ICharacterDetails } from './interface'
 

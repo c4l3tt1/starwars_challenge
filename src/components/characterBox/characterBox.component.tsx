@@ -1,8 +1,5 @@
+import { CharacterDetails, CharacterHomeWorld, CharacterImage, CharacterName } from '@/components/characterBox'
 import { cn } from '@/utils/classes'
-import { CharacterDetails } from './characterDetails.component'
-import { CharacterHome } from './characterHome.component'
-import { CharacterImage } from './characterImage.component'
-import { CharacterName } from './characterName.component'
 import { ICharacterBox } from './interface'
 
 export const CharacterBox = async ({ character, className, ...props }: ICharacterBox) => {
@@ -10,10 +7,13 @@ export const CharacterBox = async ({ character, className, ...props }: ICharacte
 
   return (
     <>
-      <article className={cn('w-full h-auto', className)} {...props}>
+      <article
+        className={cn('w-full h-auto transition-transform duration-[0.4s] hover:-translate-y-2', className)}
+        {...props}
+      >
         <CharacterImage imageUrl={`https://picsum.photos/432/230?char=${characterNameTrim}`} />
         <CharacterName>{character.name}</CharacterName>
-        <CharacterHome>{character.homeworld}</CharacterHome>
+        <CharacterHomeWorld>{character.homeworld}</CharacterHomeWorld>
         <CharacterDetails height={character.height} mass={character.mass} gender={character.gender} />
       </article>
     </>

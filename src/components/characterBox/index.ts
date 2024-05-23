@@ -1,1 +1,5 @@
+export * from './characterBox.component'
+export * from './characterDetails.component'
+export * from './characterHomeworld.component'
 export * from './characterImage.component'
+export * from './characterName.component'
