@@ -20,10 +20,7 @@ const config: Config = {
       fontSize: { ...fontSizeCustom },
       fontWeight: { ...fontWeightCustom },
       backgroundImage: {
-        'random-pic': "url('https://picsum.photos/432/230')",
-      },
-      flexBasis: {
-        '1/4-gap-30': 'calc(25% - 30px)',
+        galaxy: "url('/galaxy.jpg')",
       },
     },
   },
