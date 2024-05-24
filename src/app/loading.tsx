@@ -1,7 +1,7 @@
 import { cn } from '@/utils/classes'
 import Image from 'next/image'
 import logoStarwars from '../../public/starwars-logo.png'
-const Loading = async () => {
+const Loading = () => {
   return (
     <div
       className={cn(

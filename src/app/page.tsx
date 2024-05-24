@@ -2,6 +2,7 @@ import { listPeopleWithHomeworlds } from '@/api/services/people'
 import { CharactersList } from '@/components/characterList'
 import { Filter } from '@/components/filter'
 import { PageIntroBox } from '@/components/pageIntro'
+import { Suspense } from 'react'
 
 const HomePage = async () => {
   const dataPeople = await listPeopleWithHomeworlds()
@@ -16,7 +17,9 @@ const HomePage = async () => {
       </div>
       <Filter label="Filter By:" />
       <div className="container lg:px-6">
-        <CharactersList listTitle="All Characters" listItems={dataPeople} />
+        <Suspense fallback={<p>Carregando...</p>}>
+          <CharactersList listTitle="All Characters" listItems={dataPeople} />
+        </Suspense>
       </div>
     </main>
   )

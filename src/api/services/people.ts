@@ -1,9 +1,26 @@
 import apiClient from '@/api/axios'
 import { ICharacterDetails, ICharacterResponse } from '@/components/characterBox/interface'
 
-export const getPeople = async (): Promise<ICharacterResponse> => {
-  const response = await apiClient.get<ICharacterResponse>('/people')
+export const getPeople = async (page: number = 1): Promise<ICharacterResponse> => {
+  const params: Record<string, string> = { page: page.toString() }
+  const response = await apiClient.get<ICharacterResponse>('/people', { params })
   return response.data
+}
+
+export const getAllPeople = async (): Promise<ICharacterDetails[]> => {
+  let allPeople: ICharacterDetails[] = []
+  let page = 1
+  let hasNextPage = true
+
+  while (hasNextPage) {
+    const response = await getPeople(page)
+    allPeople = allPeople.concat(response.results)
+
+    hasNextPage = Boolean(response.next) // Se houver uma próxima página, continua
+    page += 1
+  }
+
+  return allPeople
 }
 
 export const getPeoplePlanetHome = async (id: string): Promise<string> => {
@@ -12,21 +29,17 @@ export const getPeoplePlanetHome = async (id: string): Promise<string> => {
 }
 
 export const listPeopleWithHomeworlds = async (): Promise<ICharacterDetails[]> => {
-  const peopleResponse = await getPeople()
-  const charactersWithHomeworlds: ICharacterDetails[] = [] // Inicialize como um array vazio
+  const response = await getAllPeople()
+  const charactersWithHomeworlds: ICharacterDetails[] = []
 
   await Promise.all(
-    peopleResponse.results.map(async (character) => {
+    response.map(async (character) => {
       if (character.homeworld) {
         const homeworldId = character.homeworld.split('/').filter(Boolean).pop()!
         const homeworldName = await getPeoplePlanetHome(homeworldId)
-        charactersWithHomeworlds.push({
-          name: character.name,
-          homeworld: homeworldName,
-          height: character.height,
-          mass: character.mass,
-          gender: character.gender,
-        })
+        charactersWithHomeworlds.push({ ...character, homeworld: homeworldName })
+      } else {
+        charactersWithHomeworlds.push(character)
       }
     })
   )

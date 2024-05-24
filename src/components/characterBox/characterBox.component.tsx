@@ -2,7 +2,7 @@ import { CharacterDetails, CharacterHomeWorld, CharacterImage, CharacterName } f
 import { cn } from '@/utils/classes'
 import { ICharacterBox } from './interface'
 
-export const CharacterBox = async ({ character, className, ...props }: ICharacterBox) => {
+export const CharacterBox = ({ character, className, ...props }: ICharacterBox) => {
   const characterNameTrim = character && character?.name?.trim()
 
   const responsiveClassesImage = 'xxs:max-w-[42%] xxs:pb-[38%] xxxs:max-w-[34%]'

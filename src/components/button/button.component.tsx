@@ -1,5 +1,7 @@
 'use client'
 import { cn } from '@/utils/classes'
+import Image from 'next/image'
+import loadingSvg from '../../../public/loading.svg'
 import { IButton } from './interface'
 
 export const Button = ({ className, loading, text, onClick, disabled, ...props }: IButton) => {
@@ -18,6 +20,7 @@ export const Button = ({ className, loading, text, onClick, disabled, ...props }
       disabled={disabled}
     >
       <span>{text}</span>
+      {loading && <Image src={loadingSvg} width={20} height={20} alt="loading button" className="ml-2" />}
     </button>
   )
 }
