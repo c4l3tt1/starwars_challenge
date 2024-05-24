@@ -1,8 +1,7 @@
 import { cn } from '@/utils/classes'
 import Image from 'next/image'
 import logoStarwars from '../../public/starwars-logo.png'
-export const Loading = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000))
+export const Loading = () => {
   return (
     <div
       className={cn(

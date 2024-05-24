@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import Loading from './loading'
 
 const HomePage = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 4000))
   const dataPeople = await listPeopleWithHomeworlds()
 
   return (
