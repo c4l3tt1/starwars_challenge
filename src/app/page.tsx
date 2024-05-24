@@ -2,6 +2,7 @@ import { listPeopleWithHomeworlds } from '@/api/services/people'
 import { CharactersList } from '@/components/characterList'
 import { PageIntroBox } from '@/components/pageIntro'
 import { Suspense } from 'react'
+import Loading from './loading'
 
 const HomePage = async () => {
   const dataPeople = await listPeopleWithHomeworlds()
@@ -14,7 +15,7 @@ const HomePage = async () => {
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         />
       </div>
-      <Suspense>
+      <Suspense fallback={<Loading />}>
         <CharactersList listTitle="All Characters" listItems={dataPeople} />
       </Suspense>
     </main>
