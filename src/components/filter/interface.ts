@@ -4,4 +4,5 @@ export interface IFilter {
   onChange: (value: string) => void
   disabledFilter?: boolean
   selectedValue?: string
+  onClearFilter: () => void
 }

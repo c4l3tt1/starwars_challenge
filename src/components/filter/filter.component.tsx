@@ -1,10 +1,19 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { Button } from '@/components/button'
 import { SelectCustom } from '@/components/select'
 import { cn } from '@/utils/classes'
 import { IFilter } from './interface'
 
-export const Filter = ({ className, label, onChange, disabledFilter, selectedValue, ...props }: IFilter) => {
+export const Filter = ({
+  className,
+  label,
+  onChange,
+  disabledFilter,
+  selectedValue,
+  onClearFilter,
+  ...props
+}: IFilter) => {
   return (
     <div
       className={cn(
@@ -34,7 +43,12 @@ export const Filter = ({ className, label, onChange, disabledFilter, selectedVal
           </div>
         </div>
         <div className="flex-0 xs:hidden">
-          <Button text="Clear All" disabled={disabledFilter} className="min-w-[10rem] h-[2.375rem]" />
+          <Button
+            text="Clear All"
+            disabled={disabledFilter}
+            className="min-w-[10rem] h-[2.375rem]"
+            onClick={onClearFilter}
+          />
         </div>
       </div>
     </div>

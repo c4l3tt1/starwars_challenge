@@ -8,6 +8,7 @@ export interface ICharacterDetails {
   mass?: string
   gender?: string
   className?: string
+  [key: string]: any
 }
 export interface ICharacterImage {
   className?: string

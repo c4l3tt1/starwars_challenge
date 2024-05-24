@@ -14,11 +14,9 @@ const HomePage = async () => {
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         />
       </div>
-      <div className="container lg:px-6">
-        <Suspense fallback={<p>Carregando...</p>}>
-          <CharactersList listTitle="All Characters" listItems={dataPeople} />
-        </Suspense>
-      </div>
+      <Suspense fallback={<p>Carregando...</p>}>
+        <CharactersList listTitle="All Characters" listItems={dataPeople} />
+      </Suspense>
     </main>
   )
 }
