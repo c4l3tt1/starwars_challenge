@@ -3,7 +3,7 @@ import axios from 'axios'
 export const BASE_URL = process.env.API_URL || 'https://swapi.dev/api'
 const apiClient = axios.create({
   baseURL: BASE_URL,
-  timeout: 50000,
+  timeout: 100000,
   headers: {
     'Content-Type': 'application/json',
   },
