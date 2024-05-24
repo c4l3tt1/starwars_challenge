@@ -1,6 +1,5 @@
 import { listPeopleWithHomeworlds } from '@/api/services/people'
 import { CharactersList } from '@/components/characterList'
-import { Filter } from '@/components/filter'
 import { PageIntroBox } from '@/components/pageIntro'
 import { Suspense } from 'react'
 
@@ -15,7 +14,6 @@ const HomePage = async () => {
           subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         />
       </div>
-      <Filter label="Filter By:" />
       <div className="container lg:px-6">
         <Suspense fallback={<p>Carregando...</p>}>
           <CharactersList listTitle="All Characters" listItems={dataPeople} />

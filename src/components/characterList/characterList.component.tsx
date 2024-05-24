@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { Button } from '@/components/button'
 import { CharacterBox } from '@/components/characterBox'
@@ -6,6 +7,7 @@ import { cn } from '@/utils/classes'
 import { useEffect, useState } from 'react'
 import { ICharacterDetails } from '../characterBox/interface'
 import { EmptyState } from '../emptyState'
+import { Filter } from '../filter'
 import { ICharacterList } from './interface'
 
 export const CharactersList = ({ listTitle, listItems, className, ...props }: ICharacterList) => {
@@ -16,6 +18,16 @@ export const CharactersList = ({ listTitle, listItems, className, ...props }: IC
   const [currentPage, setCurrentPage] = useState<number>(0)
   const [loading, setLoading] = useState<boolean>(false)
   const [allItemsLoaded, setAllItemsLoaded] = useState<boolean>(false)
+
+  const [filteredList, setFilteredList] = useState<ICharacterDetails[]>([])
+
+  const [selectValue, setSelectValue] = useState<string>('All')
+  const disabledFilter = selectValue === 'All'
+
+  const handleSelectChange = (value: string) => {
+    console.log('SELECT VALUE ------> ', value)
+    setSelectValue(value)
+  }
 
   const itemsPerPage = 8
 
@@ -42,7 +54,12 @@ export const CharactersList = ({ listTitle, listItems, className, ...props }: IC
 
   return (
     <>
-      {/* {hasList ? ( */}
+      <Filter
+        label="Filter By:"
+        disabledFilter={disabledFilter}
+        onChange={handleSelectChange}
+        selectedValue={selectValue}
+      />
       <section className={cn('w-full')}>
         <TitleCharactersList>{listTitle}</TitleCharactersList>
         <div
