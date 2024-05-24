@@ -1,5 +1,5 @@
 import { cn } from '@/utils/classes'
-import ICharacterName from './interface'
+import { ICharacterName } from './interface'
 
 export const CharacterName = ({ children, className, ...props }: ICharacterName) => {
   return (
