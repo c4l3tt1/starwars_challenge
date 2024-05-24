@@ -9,7 +9,7 @@ Follow the instructions below to clone the repository, install dependencies, and
 
 > **Links**
 
-- **Repositório**: https://github.com/c4l3tt1/starwars_challenge
+- **Repository**: https://github.com/c4l3tt1/starwars_challenge
 
 - **Figma Layout**: https://www.figma.com/design/5CMAkR0A4OHSS83xjIiShv/CloudWalk-FrontEnd-test?node-id=1-2&t=pushgd4uND4KlCyq-0
 
