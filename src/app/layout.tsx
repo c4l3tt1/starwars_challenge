@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import React, { Suspense } from 'react'
+import React from 'react'
 import './globals.css'
-import Loading from './loading'
 
 const helveticaNeue = localFont({
   src: [
@@ -33,9 +32,7 @@ const RootLayout = ({
 }>): JSX.Element => {
   return (
     <html lang="pt-br">
-      <body className={`${helveticaNeue.variable} ${helveticaNeue.className}`}>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
-      </body>
+      <body className={`${helveticaNeue.variable} ${helveticaNeue.className}`}>{children}</body>
     </html>
   )
 }
