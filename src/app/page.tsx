@@ -1,6 +1,7 @@
 import { listPeopleWithHomeworlds } from '@/api/services/people'
 import { CharactersList } from '@/components/characterList'
 import { PageIntroBox } from '@/components/pageIntro'
+import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import Loading from './_loading'
 
@@ -10,9 +11,14 @@ async function ListCharacters() {
   return <CharactersList listTitle="All Characters" listItems={dataPeople} />
 }
 
+const DynamicLoading = dynamic(() => import('./_loading'), {
+  loading: () => <Loading />,
+  ssr: true,
+})
+
 const HomePage = async () => {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<DynamicLoading />}>
       <main className="min-h-screen bg-white text-grayStarWars-200 py-20 font-light">
         <div className="container lg:px-6">
           <PageIntroBox
